@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.ex01.domain.mapper.MemoMapper">
+
+	<insert id="Insert_xml"  parameterType="com.example.ex01.domain.dto.MemoDto" >
+		insert into tbl_memo values(null,#{text},#{writer},now())
+	</insert>
+
+	<update id="Update_xml" parameterType="com.example.ex01.domain.dto.MemoDto">
+		update tbl_memo set text=#{text},writer=#{writer} where id=#{id}
+	</update>
+	
+	<delete id="Delete_xml" parameterType="int">
+		delete from tbl_memo where id=#{id}
+	</delete>
+	
+	<select id="SelectOne_xml">
+	</select>
+	
+	<select id="SelectAll_xml">
+	</select>
+	
+</mapper>
